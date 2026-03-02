@@ -3,7 +3,7 @@ const HeroSection = () => {
     <div className="relative h-screen">
       <div className="absolute h-screen w-full aspect-video z-10">
         <video
-          src="/show2.mp4"
+          src={"https://saadurrehman.com/reel.mp4"}
           muted
           autoPlay
           loop

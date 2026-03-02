@@ -1,18 +1,18 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import HorizentalScroll from "@/components/HorizentalScroll";
-import GalleryWithContent from "@/components/GalleryWithContent";
+// import GalleryWithContent from "@/components/GalleryWithContent";
 // import RotatingWheel from "@/components/RotatingWheel";
 import CarComingBottomSection from "@/components/CarComingBottomSection";
-import ScrollingGalleryWithContent from "@/components/ScrollingGalleryWithContent";
+// import ScrollingGalleryWithContent from "@/components/ScrollingGalleryWithContent";
 // import ScrollingVideoSection from "@/components/ScrollingVideoSection";
 // import CounterTwo from "@/components/counterTwo";
 import Heading from "@/components/heading";
 import CounterWithBackground from "@/components/CounterWithBackground";
 import TimelineSection from "@/components/TimelineSection";
 import ImageAndTextReveal from "@/components/ImageAndTextReveal";
-import Footer from "@/components/footer";
-import ScrollMarquee from "@/components/ScrollMarquee";
+// import Footer from "@/components/footer";
+// import ScrollMarquee from "@/components/ScrollMarquee";
 import Marqueesection from "@/components/Marqueesection";
 import Sports from "@/components/Sports";
 
