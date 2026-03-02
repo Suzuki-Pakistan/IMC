@@ -1,0 +1,516 @@
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// const AboutSection = () => {
+//   const sectionRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     gsap.fromTo(
+//       sectionRef.current,
+//       { yPercent: 100 },
+//       {
+//         yPercent: 0,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top bottom",
+//           end: "top top",
+//           scrub: true,
+//         },
+//       },
+//     );
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="relative h-screen bg-white z-10 flex items-center justify-center"
+//     >
+//       <h2 className="text-5xl">Second Section</h2>
+//     </section>
+//   );
+// };
+
+// export default AboutSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { SplitText } from "gsap/SplitText";
+
+// const AboutSection = () => {
+//   const sectionRef = useRef(null);
+//   const textRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(SplitText, ScrollTrigger);
+
+//     const ctx = gsap.context(() => {
+//       const split = new SplitText(textRef.current, {
+//         type: "words",
+//         wordsClass: "word",
+//       });
+
+//       gsap.fromTo(
+//         sectionRef.current,
+//         {
+//           yPercent: 100,
+//         },
+//         {
+//           yPercent: 0,
+//           ease: "none",
+//           scrollTrigger: {
+//             trigger: sectionRef.current,
+//             start: "top bottom",
+//             end: "top top",
+//             scrub: 1,
+//           },
+//         },
+//       );
+//       gsap
+//         .timeline({
+//           scrollTrigger: {
+//             trigger: sectionRef.current,
+//             start: "top top",
+//             end: "+=150%",
+//             pin: true,
+//             pinSpacing: false,
+//             scrub: true,
+//             markers: true,
+//           },
+//         })
+//         .set(
+//           split.words,
+//           {
+//             opacity: 1,
+//             stagger: 0.1,
+//           },
+//           0.1,
+//         );
+//     });
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="relative h-screen bg-white z-20 flex items-center justify-center will-change-transform"
+//     >
+//       <h2 className="text-5xl max-w-3/4 mx-auto text-center" ref={textRef}>
+//         Lorem Ipsum is simply dummy text of the printing and typesetting
+//         industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+//         ever since the 1500s
+//       </h2>
+//     </section>
+//   );
+// };
+
+// export default AboutSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { SplitText } from "gsap/SplitText";
+
+// const AboutSection = () => {
+//   const sectionRef = useRef(null);
+//   const textRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger, SplitText);
+
+//     const ctx = gsap.context(() => {
+//       const split = new SplitText(textRef.current, {
+//         type: "words",
+//         wordsClass: "word",
+//         wordStyle: "opacity: 0;",
+//       });
+
+//       gsap.set(split.words, { opacity: 0 });
+
+//       const tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top bottom",
+//           end: "+=200%",
+//           scrub: 1,
+//           pin: true,
+//           anticipatePin: 1,
+//           markers: true,
+//         },
+//       });
+
+//       // Slide section up
+//       tl.fromTo(
+//         sectionRef.current,
+//         { yPercent: 100 },
+//         { yPercent: 0, ease: "none" },
+//       );
+
+//       // Animate words
+//       tl.to(
+//         split.words,
+//         {
+//           opacity: 1,
+//           stagger: 0.08,
+//           ease: "power2.out",
+//           markers: true,
+//         },
+//         0.3,
+//       );
+//     });
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="relative h-screen bg-white z-20 flex items-center justify-center"
+//     >
+//       <h2 ref={textRef} className="text-5xl max-w-3xl mx-auto text-center">
+//         Lorem Ipsum is simply dummy text of the printing and typesetting
+//         industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+//         ever since the 1500s.
+//       </h2>
+//     </section>
+//   );
+// };
+
+// export default AboutSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { SplitText } from "gsap/SplitText";
+
+// const AboutSection = () => {
+//   const sectionRef = useRef(null);
+//   const textRef = useRef(null);
+//   const lineRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger, SplitText);
+
+//     const ctx = gsap.context(() => {
+//       const split = new SplitText(textRef.current, {
+//         type: "words",
+//         wordsClass: "word",
+//       });
+
+//       gsap.set(split.words, { opacity: 0.2, y: 0, display: "inline-block" });
+//       // Start slightly lower and invisible
+
+//       const tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top top", // Start when section hits top of viewport
+//           end: "+=500%", // Animate over 150% of section height
+//           scrub: 1,
+//           pin: true,
+//           anticipatePin: 1,
+//           markers: true,
+//         },
+//       });
+
+//       const tlTwo = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top top", // Start when section hits top of viewport
+//           end: "+=100%", // Animate over 150% of section height
+//           scrub: 1,
+//           pin: true,
+//           anticipatePin: 1,
+//           markers: true,
+//         },
+//       });
+
+//       // Slide section up slightly for smooth effect
+//       tl.fromTo(
+//         sectionRef.current,
+//         { yPercent: 0 }, // small slide for depth
+//         { yPercent: 0, ease: "none" },
+//       );
+
+//       // Animate words opacity and upward motion
+//       tl.to(
+//         split.words,
+//         {
+//           opacity: 1,
+//           y: 0,
+//           stagger: 0.08,
+//           ease: "power2.out",
+//         },
+//         0.1, // slight delay after section starts
+//       );
+
+//       tlTwo.to(lineRef.current, { height: "300", ease: "none" });
+//     }, sectionRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="relative h-screen bg-black z-20 flex items-center justify-center flex-col"
+//     >
+//       <h2
+//         ref={textRef}
+//         className="text-5xl max-w-3xl mx-auto text-center text-white"
+//       >
+//         Lorem Ipsum is simply dummy text of the printing and typesetting
+//         industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+//         ever since the 1500s.
+//       </h2>
+
+//       <div ref={lineRef} className="line mx-auto mt-14 w-1 bg-red-700"></div>
+//     </section>
+//   );
+// };
+
+// export default AboutSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { SplitText } from "gsap/SplitText";
+
+// const AboutSection = () => {
+//   const sectionRef = useRef(null);
+//   const textRef = useRef(null);
+//   const lineRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger, SplitText);
+
+//     const ctx = gsap.context(() => {
+//       const split = new SplitText(textRef.current, {
+//         type: "words",
+//         wordsClass: "word",
+//       });
+
+//       gsap.set(split.words, { opacity: 0.4, display: "inline-block" });
+//       gsap.set(lineRef.current, { height: 0 });
+
+//       // Single timeline for both words and line
+//       const tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top top",
+//           end: "+=200%", // Adjust scroll length
+//           scrub: 1,
+//           pin: true,
+//           anticipatePin: 1,
+//           markers: true,
+//         },
+//       });
+
+//       // Animate words
+//       tl.to(
+//         split.words,
+//         {
+//           opacity: 1,
+//           stagger: 0.08,
+//           ease: "power2.out",
+//         },
+//         0, // start immediately
+//       );
+
+//       // Animate line after a small delay
+//       tl.to(
+//         lineRef.current,
+//         {
+//           height: "300px", // Add units!
+//           ease: "none",
+//         },
+//         0.3, // starts slightly after words animation
+//       );
+//     }, sectionRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="relative h-screen bg-black z-20 flex items-center justify-center flex-col"
+//     >
+//       <h2
+//         ref={textRef}
+//         className="text-5xl max-w-3xl mx-auto text-center text-white"
+//       >
+//         Lorem Ipsum is simply dummy text of the printing and typesetting
+//         industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+//         ever since the 1500s.
+//       </h2>
+
+//       <div ref={lineRef} className="line mx-auto mt-14 w-1 bg-red-700"></div>
+//     </section>
+//   );
+// };
+
+// export default AboutSection;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// const HeroSection = () => {
+//   const videoRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     const video = videoRef.current;
+//     if (!video) return;
+
+//     const init = () => {
+//       gsap.to(video, {
+//         currentTime: video.duration,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: video,
+//           start: "top bottom",
+//           end: "bottom top",
+//           scrub: true,
+//         },
+//       });
+//     };
+
+//     if (video.readyState >= 1) {
+//       init();
+//     } else {
+//       video.addEventListener("loadedmetadata", init);
+//     }
+
+//     return () => {
+//       ScrollTrigger.getAll().forEach((t) => t.kill());
+//     };
+//   }, []);
+
+//   return (
+//     <section className="relative h-[200vh]">
+//       <video
+//         ref={videoRef}
+//         src="/crown-2.mp4"
+//         muted
+//         playsInline
+//         preload="auto"
+//         className="sticky top-0 w-full h-screen object-cover"
+//       />
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// const HeroSection = () => {
+//   const videoRef = useRef(null);
+//   const containerRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     const video = videoRef.current;
+//     const container = containerRef.current;
+
+//     if (!video) return;
+
+//     const setupAnimation = () => {
+//       const tween = gsap.to(video, {
+//         currentTime: video.duration,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: container,
+//           start: "top top",
+//           end: "bottom bottom",
+//           scrub: true,
+//           pin: true,
+//         },
+//       });
+
+//       return tween;
+//     };
+
+//     if (video.readyState >= 1) {
+//       setupAnimation();
+//     } else {
+//       video.addEventListener("loadedmetadata", setupAnimation);
+//     }
+
+//     return () => {
+//       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+//     };
+//   }, []);
+
+//   return (
+//     <div ref={containerRef} className="hero-section h-[200vh] relative">
+//       <video
+//         ref={videoRef}
+//         src="/crown-2.mp4"
+//         muted
+//         playsInline
+//         preload="auto"
+//         className="w-full object-cover"
+//       />
+//     </div>
+//   );
+// };
+
+// export default HeroSection;
+
+// "use client";
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// const HeroSection = () => {
+//   const containerRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     ScrollTrigger.create({
+//       trigger: containerRef.current,
+//       start: "top top",
+//       end: "+=150%",
+//       scrub: true,
+//       pin: true,
+//     });
+
+//     return () => {
+//       ScrollTrigger.getAll().forEach((t) => t.kill());
+//     };
+//   }, []);
+
+//   return (
+//     <section
+//       ref={containerRef}
+//       className="relative h-screen bg-black text-white flex items-center justify-center"
+//     >
+//       <h1 className="text-6xl">Hero Section</h1>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
