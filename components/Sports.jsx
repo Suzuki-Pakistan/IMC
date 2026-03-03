@@ -366,7 +366,7 @@ export default function Sports() {
 
   return (
     <section
-      className="horizontal-section bg-[#EB0A1E] overflow-hidden"
+      className="horizontal-section bg-[#EB0A1E] overflow-hidden text-white"
       ref={sportScrollSectionRef}
     >
       <div className="wrapper">

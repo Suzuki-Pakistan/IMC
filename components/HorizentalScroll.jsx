@@ -318,7 +318,7 @@ export default function HorizontalScrollReveal() {
 
   return (
     <section
-      className="horizontal-section bg-black overflow-hidden"
+      className="horizontal-section bg-black overflow-hidden text-white"
       ref={scrollSectionRef}
     >
       <div className="wrapper">

@@ -79,6 +79,7 @@ import Cursor from "@/components/Cursor";
 import Footer from "@/components/footer";
 import Header from "@/components/Header";
 import FooterParallaxShell from "@/components/FooterParallaxShell";
+import GoToTopButton from "@/components/GoToTopButton";
 
 const toyotaFont = localFont({
   src: [
@@ -128,6 +129,7 @@ export default function RootLayout({
             <main className="relative z-10 bg-[#FFFEF9]">
               <Cursor />
               {children}
+              <GoToTopButton />
             </main>
           </FooterParallaxShell>
         </LenisProvider>

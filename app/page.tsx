@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <Heading text="Measuring the || PKR 231 Million Invested in Pakistan’s Future" />
+      <Heading text="Measuring || PKR 231 Million Invested in Pakistan’s Future" />
       <CounterWithBackground />
-      <AboutSection text="The 2050 Challenge: Six Strategic Pillars for Building a Sustainable, Resilient, and Future-Ready World" />
+      <AboutSection text="2050 Challenge: Six Strategic Pillars for Building a Sustainable, Resilient, and Future-Ready World" />
       <TimelineSection />
       <HorizentalScroll />
       {/* <Heading text="Measuring the PKR 231 Million Invested in Pakistan’s Future" /> */}

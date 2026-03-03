@@ -887,7 +887,7 @@ export default function CarComingBottomSection() {
           {
             autoAlpha: 1,
             x: i === 3 ? -80 : i === 2 ? 80 : 0,
-            y: 0,
+            y: 30,
             scale: 1,
             duration: 0.35,
             ease: "power2.out",
