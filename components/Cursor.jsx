@@ -526,7 +526,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-5 h-5 bg-[#EB0A1E] rounded-full pointer-events-none z-50 flex items-center justify-center origin-center"
+      className="fixed top-0 left-0 w-5 h-5 bg-[#EB0A1E]  rounded-full pointer-events-none z-[99999] flex items-center justify-center origin-center"
       style={{ mixBlendingMode: "difference" }}
     >
       {/* Dynamic Text */}

@@ -58,7 +58,7 @@ export default function GoToTopButton() {
       onClick={scrollToTop}
       aria-label="Go to top"
       className="
-        fixed bottom-6 right-6 z-50
+        fixed bottom-6 right-6 z-[9999]
         inline-flex items-center justify-center
         h-12 w-12 rounded-full
         bg-white shadow-lg ring-1 ring-black/10
